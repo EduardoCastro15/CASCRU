@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65DD0B5D-89E0-46C0-A61C-0A9ADBAEC49E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BusinessIntelligence_v1</RootNamespace>
+    <AssemblyName>BusinessIntelligence_v1</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.29\lib\net48\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.29\lib\net48\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.29\lib\net48\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConexionBD.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAgregarCalificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarCalificaciones.Designer.cs">
+      <DependentUpon>FormAgregarCalificaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAgregarDiscente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarDiscente.Designer.cs">
+      <DependentUpon>FormAgregarDiscente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBI.Designer.cs">
+      <DependentUpon>FormBI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBI1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBI1.Designer.cs">
+      <DependentUpon>FormBI1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBI2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBI2.Designer.cs">
+      <DependentUpon>FormBI2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBI3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBI3.Designer.cs">
+      <DependentUpon>FormBI3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBI4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBI4.Designer.cs">
+      <DependentUpon>FormBI4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBI5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBI5.Designer.cs">
+      <DependentUpon>FormBI5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBI6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBI6.Designer.cs">
+      <DependentUpon>FormBI6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBI7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBI7.Designer.cs">
+      <DependentUpon>FormBI7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDatosAcademicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDatosAcademicos.Designer.cs">
+      <DependentUpon>FormDatosAcademicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDatosDeportivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDatosDeportivos.Designer.cs">
+      <DependentUpon>FormDatosDeportivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDatosMedicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDatosMedicos.Designer.cs">
+      <DependentUpon>FormDatosMedicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDatosPersonales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDatosPersonales.Designer.cs">
+      <DependentUpon>FormDatosPersonales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInicio.Designer.cs">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNuevoUsuario.Designer.cs">
+      <DependentUpon>FormNuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPorcenEspe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPorcenEspe.Designer.cs">
+      <DependentUpon>FormPorcenEspe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPorcenMat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPorcenMat.Designer.cs">
+      <DependentUpon>FormPorcenMat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTablaAdmins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTablaAdmins.Designer.cs">
+      <DependentUpon>FormTablaAdmins.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inicioSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inicioSesion.Designer.cs">
+      <DependentUpon>inicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sedenaDataSet.cs">
+      <DependentUpon>sedenaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sedenaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sedenaDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarCalificaciones.resx">
+      <DependentUpon>FormAgregarCalificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarDiscente.resx">
+      <DependentUpon>FormAgregarDiscente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBI.resx">
+      <DependentUpon>FormBI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBI1.resx">
+      <DependentUpon>FormBI1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBI2.resx">
+      <DependentUpon>FormBI2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBI3.resx">
+      <DependentUpon>FormBI3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBI4.resx">
+      <DependentUpon>FormBI4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBI5.resx">
+      <DependentUpon>FormBI5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBI6.resx">
+      <DependentUpon>FormBI6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBI7.resx">
+      <DependentUpon>FormBI7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDatosAcademicos.resx">
+      <DependentUpon>FormDatosAcademicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDatosDeportivos.resx">
+      <DependentUpon>FormDatosDeportivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDatosMedicos.resx">
+      <DependentUpon>FormDatosMedicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDatosPersonales.resx">
+      <DependentUpon>FormDatosPersonales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInicio.resx">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevoUsuario.resx">
+      <DependentUpon>FormNuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPorcenEspe.resx">
+      <DependentUpon>FormPorcenEspe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPorcenMat.resx">
+      <DependentUpon>FormPorcenMat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTablaAdmins.resx">
+      <DependentUpon>FormTablaAdmins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inicioSesion.resx">
+      <DependentUpon>inicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="sedenaDataSet.xsc">
+      <DependentUpon>sedenaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sedenaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sedenaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sedenaDataSet.xss">
+      <DependentUpon>sedenaDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="escudo_emi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\escudo_emi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\640px-SEDENA_Logo_2019.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\logoheader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imagenes\escudo_emi_dim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ESCOM_LOGO.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IPN_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoESCOMBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoESCOMBlanco50_DIM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoESCOMBlanco25_DIM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ESCOM_LOGO.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
