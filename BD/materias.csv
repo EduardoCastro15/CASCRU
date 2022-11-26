@@ -1,0 +1,48 @@
+﻿id,nombre_materia,tipo,semestre,creditos,fk_id_carrera,fk_id_academia
+1,analisis_vectorial,Formación Científica - Básica,1,4.39,1,1
+2,calculo,Formación Científica - Básica,1,4.45,1,2
+3,matematicas_discretas,Formación Científica - Básica,1,5.85,1,3
+4,algoritmia_y_programacion_estructurada,Formación Profesional,1,4.45,1,4
+5,fisica,Formación Científica - Básica,1,4.39,1,5
+6,ingenieria_etica_sociedad,Formación Institucional,1,4.39,1,6
+7,ecuaciones_diferenciales,Formación Científica - Básica,2,4.39,1,7
+8,algebra_lineal,Formación Científica - Básica,2,4.39,1,1
+9,calculo_aplicado,Formación Científica - Básica,2,4.44,1,2
+10,estructuras_de_datos,Formación Profesional,2,4.39,1,3
+11,comunicacion_oral_y_escrita,Formación Institucional,2,4.39,1,4
+12,analisis_fundamental_de_circuitos,Formación Profesional,2,4.33,1,5
+13,matematicas_avanzadas_para_la_ingenieria,Formación Científica - Básica,3,4.46,1,6
+14,fundamentos_economicos,Formación Profesional,3,4.33,1,7
+15,fundamentos_de_diseño_digital,Formación Profesional,3,4.48,1,1
+16,teoria_computacional,Formación Científica - Básica,3,4.3,1,2
+17,bases_de_datos,Formación Profesional,3,4.44,1,3
+18,programacion_orientada_a_objetos,Formación Profesional,3,4.34,1,4
+19,electronica_analogica,Formación Profesional,3,4.35,1,5
+20,redes_de_computadoras,Formación Profesional,4,4.46,1,6
+21,diseno_de_sistemas_computacionales,Formación Profesional,4,4.5,1,7
+22,probabilidad_y_estadistica,Formación Científica - Básica,4,4.39,1,1
+23,sistemas_operativos,Formación Profesional,4,4.39,1,2
+24,analisis_y_diseno_orientado_objetos,Formación Profesional,4,4.39,1,3
+25,tecnologias_para_la_web,Formación Profesional,4,4.49,1,4
+26,administracion_financiera,Formación Profesional,4,4.36,1,5
+27,optativa_A,Formación Profesional,5,4.39,1,6
+28,arquitectura_de_computadoras,Formación Profesional,5,4.39,1,7
+29,analisis_de_algoritmos,Formación Científica - Básica,5,4.39,1,1
+30,optativa_B,Formación Profesional,5,4.39,1,2
+31,ingenieria_de_software,Formación Profesional,5,4.39,1,3
+32,administracion_de_proyectos,Formación Profesional,5,4.39,1,4
+33,instrumentacion,Formación Profesional,5,4.39,1,5
+34,teoria_de_comunicaciones_y_senales,Formación Profesional,6,4.39,1,6
+35,aplicaciones_para_comunicaciones_en_red,Formación Profesional,6,4.39,1,7
+36,metodos_cuantitativos_para_la_toma_de_decisiones,Formación Científica - Básica,6,4.39,1,1
+37,introduccion_a_los_microcontroladores,Formación Profesional,6,4.39,1,2
+38,compiladores,Formación Profesional,6,4.39,1,3
+39,optativa_C,Formación Profesional,6,4.39,1,4
+40,optativa_D,Formación Profesional,6,4.39,1,5
+41,desarrollo_de_sistemas_distribuidos,Formación Terminal e Integración,7,4.39,1,6
+42,administracion_de_servicios_en_red,Formación Terminal e Integración,7,4.39,1,7
+43,gestion_empresarial,Formación Terminal e Integración,7,4.39,1,1
+44,liderazgo,Formación Institucional,7,4.39,1,2
+45,trabajo_terminal_I,Formación Terminal e Integración,7,11.25,1,3
+46,electiva,Formación Terminal e Integración,8,12.15,1,4
+47,trabajo_terminal_II,Formación Terminal e Integración,9,11.25,1,5
