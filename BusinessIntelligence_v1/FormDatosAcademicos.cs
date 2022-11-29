@@ -25,6 +25,8 @@ namespace BusinessIntelligence_v1
         {
             double sumaMate = 0.0;
             double sumaEspe = 0.0;
+            double sumaInst = 0.0;
+            double sumaTerm = 0.0;
             BusinessIntelligence_v1.ConexionBD conexion = new BusinessIntelligence_v1.ConexionBD();
             conn = conexion.ConectarMysql();
 
@@ -33,280 +35,191 @@ namespace BusinessIntelligence_v1
                 conn.Open();
                 cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = ("select fisica_general,algebra_superior,geometria_analitica," +
-                        "matematicas_basicas_para_ingenieria,calculo_diferencial_e_integral,temas_selecto_de_fisica,algebra_lineal," +
-                        "mecanica_I,calculo_vectorial_I,programacion,dibujo_de_ingenieria,quimica_general,electricidad_y_magnetismo," +
-                        "probabilidad_y_estadistica,ecuaciones_diferenciales,calculo_vectorial_II,organizacion_de_computadoras," +
-                        "programacion_avanzada,simulacion_de_sistemas,matematicas_avanzadas,arquitectura_de_computadoras_II,estructura_de_datos," +
-                        "investigacion_de_operaciones_I,lenguaje_ensamblador,matematicas_computacionales,lenguajes_de_programacion," +
-                        "ingenieria_de_sistemas_de_informacion_I,investigacion_de_operaciones_II,sistemas_operativos,analisis_de_algoritmos," +
-                        "teoria_de_computacion,senales_y_sistemas,bases_de_datos,ingenieria_de_sistemas_de_informacion_II,diseno_de_compiladores," +
-                        "sistemas_distribuidos,microprocesadores_y_microcontroladores,bases_de_datos_avanzadas,tecnicas_de_produccion_de_sistemas," +
-                        "sistemas_expertos,arquitectura_de_desarrollo_de_software,programacion_orientada_a_objetos," +
-                        "sistemas_computacionales_en_ambiente_multimedia,ingenieria_de_redes_I,tecnologias_de_informacion_emergente," +
-                        "seguridad_computacional,inteligencia_artificial,desarrollo_de_software_orientado_a_objetos,auditoria_y_consultoria_informatica," +
-                        "ingenieria_de_redes_II,topicos_avanzados,legislacion_informatica,redes_neuronales,proyectos_de_ingenieria_de_software," +
-                        "laboratorio_de_ingenieria_de_redes,ingenieria_de_redes_III from datos_academicos_discente where matricula_discente = '" + textBox1.Text + "' ");
+                cmd.CommandText = ("select analisis_vectorial,calculo,matematicas_discretas,algoritmia_y_programacion_estructurada,fisica," +
+                    "ingenieria_etica_sociedad,ecuaciones_diferenciales,algebra_lineal,calculo_aplicado,estructuras_de_datos,comunicacion_oral_y_escrita," +
+                    "analisis_fundamental_de_circuitos,matematicas_avanzadas_para_la_ingenieria,fundamentos_economicos,fundamentos_de_diseño_digital," +
+                    "teoria_computacional,bases_de_datos,programacion_orientada_a_objetos,electronica_analogica,redes_de_computadoras," +
+                    "diseno_de_sistemas_computacionales,probabilidad_y_estadistica,sistemas_operativos,analisis_y_diseno_orientado_objetos," +
+                    "tecnologias_para_la_web,administracion_financiera,optativa_A,arquitectura_de_computadoras,analisis_de_algoritmos,optativa_B," +
+                    "ingenieria_de_software,administracion_de_proyectos,instrumentacion,teoria_de_comunicaciones_y_senales," +
+                    "aplicaciones_para_comunicaciones_en_red,metodos_cuantitativos_para_la_toma_de_decisiones,introduccion_a_los_microcontroladores," +
+                    "compiladores,optativa_C,optativa_D,desarrollo_de_sistemas_distribuidos,administracion_de_servicios_en_red,gestion_empresarial," +
+                    "liderazgo,trabajo_terminal_I,electiva,trabajo_terminal_II from datos_academicos_discente where matricula_discente = '" + textBox1.Text + "' ");
                 MySqlDataReader leer = cmd.ExecuteReader();
                 if (leer.HasRows)
                 {
                     leer.Read();
-                    textBox2.Text = leer["fisica_general"].ToString();
-                    textBox3.Text = leer["algebra_superior"].ToString();
-                    textBox4.Text = leer["geometria_analitica"].ToString();
-                    textBox5.Text = leer["matematicas_basicas_para_ingenieria"].ToString();
-                    textBox6.Text = leer["calculo_diferencial_e_integral"].ToString();
-                    textBox7.Text = leer["temas_selecto_de_fisica"].ToString();
-                    textBox8.Text = leer["algebra_lineal"].ToString();
-                    textBox9.Text = leer["mecanica_I"].ToString();
-                    textBox10.Text = leer["calculo_vectorial_I"].ToString();
-                    textBox11.Text = leer["programacion"].ToString();
-                    textBox12.Text = leer["dibujo_de_ingenieria"].ToString();
-                    textBox13.Text = leer["quimica_general"].ToString();
-                    textBox14.Text = leer["electricidad_y_magnetismo"].ToString();
-                    textBox15.Text = leer["probabilidad_y_estadistica"].ToString();
-                    textBox16.Text = leer["ecuaciones_diferenciales"].ToString();
-                    textBox17.Text = leer["calculo_vectorial_II"].ToString();
-                    textBox18.Text = leer["organizacion_de_computadoras"].ToString();
-                    textBox19.Text = leer["programacion_avanzada"].ToString();
-                    textBox20.Text = leer["simulacion_de_sistemas"].ToString();
-                    textBox21.Text = leer["matematicas_avanzadas"].ToString();
-                    textBox22.Text = leer["arquitectura_de_computadoras_II"].ToString();
-                    textBox23.Text = leer["estructura_de_datos"].ToString();
-                    textBox24.Text = leer["investigacion_de_operaciones_I"].ToString();
-                    textBox25.Text = leer["lenguaje_ensamblador"].ToString();
-                    textBox26.Text = leer["matematicas_computacionales"].ToString();
-                    textBox27.Text = leer["lenguajes_de_programacion"].ToString();
-                    textBox28.Text = leer["ingenieria_de_sistemas_de_informacion_I"].ToString();
-                    textBox29.Text = leer["investigacion_de_operaciones_II"].ToString();
-                    textBox30.Text = leer["sistemas_operativos"].ToString();
-                    textBox31.Text = leer["analisis_de_algoritmos"].ToString();
-                    textBox32.Text = leer["teoria_de_computacion"].ToString();
-                    textBox33.Text = leer["senales_y_sistemas"].ToString();
-                    textBox34.Text = leer["bases_de_datos"].ToString();
-                    textBox35.Text = leer["ingenieria_de_sistemas_de_informacion_II"].ToString();
-                    textBox36.Text = leer["diseno_de_compiladores"].ToString();
-                    textBox37.Text = leer["sistemas_distribuidos"].ToString();
-                    textBox38.Text = leer["microprocesadores_y_microcontroladores"].ToString();
-                    textBox39.Text = leer["bases_de_datos_avanzadas"].ToString();
-                    textBox40.Text = leer["tecnicas_de_produccion_de_sistemas"].ToString();
-                    textBox41.Text = leer["sistemas_expertos"].ToString();
-                    textBox42.Text = leer["arquitectura_de_desarrollo_de_software"].ToString();
-                    textBox43.Text = leer["programacion_orientada_a_objetos"].ToString();
-                    textBox44.Text = leer["sistemas_computacionales_en_ambiente_multimedia"].ToString();
-                    textBox45.Text = leer["ingenieria_de_redes_I"].ToString();
-                    textBox46.Text = leer["tecnologias_de_informacion_emergente"].ToString();
-                    textBox47.Text = leer["seguridad_computacional"].ToString();
-                    textBox48.Text = leer["inteligencia_artificial"].ToString();
-                    textBox49.Text = leer["desarrollo_de_software_orientado_a_objetos"].ToString();
-                    textBox50.Text = leer["auditoria_y_consultoria_informatica"].ToString();
-                    textBox51.Text = leer["ingenieria_de_redes_II"].ToString();
-                    textBox52.Text = leer["topicos_avanzados"].ToString();
-                    textBox53.Text = leer["legislacion_informatica"].ToString();
-                    textBox54.Text = leer["redes_neuronales"].ToString();
-                    textBox55.Text = leer["proyectos_de_ingenieria_de_software"].ToString();
-                    textBox56.Text = leer["laboratorio_de_ingenieria_de_redes"].ToString();
-                    textBox57.Text = leer["ingenieria_de_redes_III"].ToString();
+                    textBox101.Text = leer["analisis_vectorial"].ToString();
+                    textBox102.Text = leer["calculo"].ToString();
+                    textBox103.Text = leer["matematicas_discretas"].ToString();
+                    textBox104.Text = leer["algoritmia_y_programacion_estructurada"].ToString();
+                    textBox105.Text = leer["fisica"].ToString();
+                    textBox106.Text = leer["ingenieria_etica_sociedad"].ToString();
+                    textBox107.Text = leer["ecuaciones_diferenciales"].ToString();
+                    textBox108.Text = leer["algebra_lineal"].ToString();
+                    textBox109.Text = leer["calculo_aplicado"].ToString();
+                    textBox110.Text = leer["estructuras_de_datos"].ToString();
+                    textBox111.Text = leer["comunicacion_oral_y_escrita"].ToString();
+                    textBox112.Text = leer["analisis_fundamental_de_circuitos"].ToString();
+                    textBox113.Text = leer["matematicas_avanzadas_para_la_ingenieria"].ToString();
+                    textBox114.Text = leer["fundamentos_economicos"].ToString();
+                    textBox115.Text = leer["fundamentos_de_diseño_digital"].ToString();
+                    textBox116.Text = leer["teoria_computacional"].ToString();
+                    textBox117.Text = leer["bases_de_datos"].ToString();
+                    textBox118.Text = leer["programacion_orientada_a_objetos"].ToString();
+                    textBox119.Text = leer["electronica_analogica"].ToString();
+                    textBox120.Text = leer["redes_de_computadoras"].ToString();
+                    textBox121.Text = leer["diseno_de_sistemas_computacionales"].ToString();
+                    textBox122.Text = leer["probabilidad_y_estadistica"].ToString();
+                    textBox123.Text = leer["sistemas_operativos"].ToString();
+                    textBox124.Text = leer["analisis_y_diseno_orientado_objetos"].ToString();
+                    textBox125.Text = leer["tecnologias_para_la_web"].ToString();
+                    textBox126.Text = leer["administracion_financiera"].ToString();
+                    textBox127.Text = leer["optativa_A"].ToString();
+                    textBox128.Text = leer["arquitectura_de_computadoras"].ToString();
+                    textBox129.Text = leer["analisis_de_algoritmos"].ToString();
+                    textBox130.Text = leer["optativa_B"].ToString();
+                    textBox131.Text = leer["ingenieria_de_software"].ToString();
+                    textBox132.Text = leer["administracion_de_proyectos"].ToString();
+                    textBox133.Text = leer["instrumentacion"].ToString();
+                    textBox134.Text = leer["teoria_de_comunicaciones_y_senales"].ToString();
+                    textBox135.Text = leer["aplicaciones_para_comunicaciones_en_red"].ToString();
+                    textBox136.Text = leer["metodos_cuantitativos_para_la_toma_de_decisiones"].ToString();
+                    textBox137.Text = leer["introduccion_a_los_microcontroladores"].ToString();
+                    textBox138.Text = leer["compiladores"].ToString();
+                    textBox139.Text = leer["optativa_C"].ToString();
+                    textBox140.Text = leer["optativa_D"].ToString();
+                    textBox141.Text = leer["desarrollo_de_sistemas_distribuidos"].ToString();
+                    textBox142.Text = leer["administracion_de_servicios_en_red"].ToString();
+                    textBox143.Text = leer["gestion_empresarial"].ToString();
+                    textBox144.Text = leer["liderazgo"].ToString();
+                    textBox145.Text = leer["trabajo_terminal_I"].ToString();
+                    textBox146.Text = leer["electiva"].ToString();
+                    textBox147.Text = leer["trabajo_terminal_II"].ToString();
 
-                    if (textBox1.Text == "-1.0")
-                        textBox1.Text = "0.0";
-                    if (textBox10.Text == "-1.0")
-                        textBox10.Text = "0.0";
-                    if (textBox11.Text == "-1.0")
-                        textBox11.Text = "0.0";
-                    if (textBox12.Text == "-1.0")
-                        textBox12.Text = "0.0";
-                    if (textBox13.Text == "-1.0")
-                        textBox13.Text = "0.0";
-                    if (textBox14.Text == "-1.0")
-                        textBox14.Text = "0.0";
-                    if (textBox15.Text == "-1.0")
-                        textBox15.Text = "0.0";
-                    if (textBox16.Text == "-1.0")
-                        textBox16.Text = "0.0";
-                    if (textBox17.Text == "-1.0")
-                        textBox17.Text = "0.0";
-                    if (textBox18.Text == "-1.0")
-                        textBox18.Text = "0.0";
-                    if (textBox19.Text == "-1.0")
-                        textBox19.Text = "0.0";
-                    if (textBox2.Text == "-1.0")
-                        textBox2.Text = "0.0";
-                    if (textBox20.Text == "-1.0")
-                        textBox20.Text = "0.0";
-                    if (textBox21.Text == "-1.0")
-                        textBox21.Text = "0.0";
-                    if (textBox22.Text == "-1.0")
-                        textBox22.Text = "0.0";
-                    if (textBox23.Text == "-1.0")
-                        textBox23.Text = "0.0";
-                    if (textBox24.Text == "-1.0")
-                        textBox24.Text = "0.0";
-                    if (textBox25.Text == "-1.0")
-                        textBox25.Text = "0.0";
-                    if (textBox26.Text == "-1.0")
-                        textBox26.Text = "0.0";
-                    if (textBox27.Text == "-1.0")
-                        textBox27.Text = "0.0";
-                    if (textBox28.Text == "-1.0")
-                        textBox28.Text = "0.0";
-                    if (textBox29.Text == "-1.0")
-                        textBox29.Text = "0.0";
-                    if (textBox3.Text == "-1.0")
-                        textBox3.Text = "0.0";
-                    if (textBox30.Text == "-1.0")
-                        textBox30.Text = "0.0";
-                    if (textBox31.Text == "-1.0")
-                        textBox31.Text = "0.0";
-                    if (textBox32.Text == "-1.0")
-                        textBox32.Text = "0.0";
-                    if (textBox33.Text == "-1.0")
-                        textBox33.Text = "0.0";
-                    if (textBox34.Text == "-1.0")
-                        textBox34.Text = "0.0";
-                    if (textBox35.Text == "-1.0")
-                        textBox35.Text = "0.0";
-                    if (textBox36.Text == "-1.0")
-                        textBox36.Text = "0.0";
-                    if (textBox37.Text == "-1.0")
-                        textBox37.Text = "0.0";
-                    if (textBox38.Text == "-1.0")
-                        textBox38.Text = "0.0";
-                    if (textBox39.Text == "-1.0")
-                        textBox39.Text = "0.0";
-                    if (textBox4.Text == "-1.0")
-                        textBox4.Text = "0.0";
-                    if (textBox40.Text == "-1.0")
-                        textBox40.Text = "0.0";
-                    if (textBox41.Text == "-1.0")
-                        textBox41.Text = "0.0";
-                    if (textBox42.Text == "-1.0")
-                        textBox42.Text = "0.0";
-                    if (textBox43.Text == "-1.0")
-                        textBox43.Text = "0.0";
-                    if (textBox44.Text == "-1.0")
-                        textBox44.Text = "0.0";
-                    if (textBox45.Text == "-1.0")
-                        textBox45.Text = "0.0";
-                    if (textBox46.Text == "-1.0")
-                        textBox46.Text = "0.0";
-                    if (textBox47.Text == "-1.0")
-                        textBox47.Text = "0.0";
-                    if (textBox48.Text == "-1.0")
-                        textBox48.Text = "0.0";
-                    if (textBox49.Text == "-1.0")
-                        textBox49.Text = "0.0";
-                    if (textBox5.Text == "-1.0")
-                        textBox5.Text = "0.0";
-                    if (textBox50.Text == "-1.0")
-                        textBox50.Text = "0.0";
-                    if (textBox51.Text == "-1.0")
-                        textBox51.Text = "0.0";
-                    if (textBox52.Text == "-1.0")
-                        textBox52.Text = "0.0";
-                    if (textBox53.Text == "-1.0")
-                        textBox53.Text = "0.0";
-                    if (textBox54.Text == "-1.0")
-                        textBox54.Text = "0.0";
-                    if (textBox55.Text == "-1.0")
-                        textBox55.Text = "0.0";
-                    if (textBox56.Text == "-1.0")
-                        textBox56.Text = "0.0";
-                    if (textBox57.Text == "-1.0")
-                        textBox57.Text = "0.0";
-                    if (textBox6.Text == "-1.0")
-                        textBox6.Text = "0.0";
-                    if (textBox7.Text == "-1.0")
-                        textBox7.Text = "0.0";
-                    if (textBox8.Text == "-1.0")
-                        textBox8.Text = "0.0";
-                    if (textBox9.Text == "-1.0")
-                        textBox9.Text = "0.0";
 
-                    //suma += double.Parse(textBox1.Text);
-                    //suma += double.Parse(textBox10.Text);
-                    //suma += double.Parse(textBox11.Text);
-                    sumaEspe += double.Parse(textBox12.Text);       //espe
-                    //suma += double.Parse(textBox13.Text);
-                    //suma += double.Parse(textBox14.Text);
-                    //suma += double.Parse(textBox15.Text);
-                    sumaMate += double.Parse(textBox16.Text);   //mate
-                    //suma += double.Parse(textBox17.Text);
-                    //suma += double.Parse(textBox18.Text);
-                    sumaEspe += double.Parse(textBox19.Text);       //espe
-                    //suma += double.Parse(textBox2.Text);
-                    //suma += double.Parse(textBox20.Text);
-                    sumaEspe += double.Parse(textBox21.Text);       //espe
-                    sumaMate += double.Parse(textBox22.Text);   //mate
-                    //suma += double.Parse(textBox23.Text);
-                    //suma += double.Parse(textBox24.Text);
-                    sumaMate += double.Parse(textBox25.Text);   //mate
-                    sumaEspe += double.Parse(textBox26.Text);       //espe
-                    //suma += double.Parse(textBox27.Text);
-                    //suma += double.Parse(textBox28.Text);
-                    //suma += double.Parse(textBox29.Text);
-                    //suma += double.Parse(textBox3.Text);
-                    //suma += double.Parse(textBox30.Text);
-                    //suma += double.Parse(textBox31.Text);
-                    sumaEspe += double.Parse(textBox32.Text);       //espe
-                    //suma += double.Parse(textBox33.Text);
-                    //suma += double.Parse(textBox34.Text);
-                    //suma += double.Parse(textBox35.Text);
-                    //suma += double.Parse(textBox36.Text);
-                    //suma += double.Parse(textBox37.Text);
-                    sumaEspe += double.Parse(textBox38.Text);       //espe
-                    //suma += double.Parse(textBox39.Text);
-                    sumaMate += double.Parse(textBox4.Text);    //mate
-                    //suma += double.Parse(textBox40.Text);
-                    //suma += double.Parse(textBox41.Text);
-                    //suma += double.Parse(textBox42.Text);
-                    sumaEspe += double.Parse(textBox43.Text);       //espe
-                    //suma += double.Parse(textBox44.Text);
-                    //suma += double.Parse(textBox45.Text);
-                    //suma += double.Parse(textBox46.Text);
-                    //suma += double.Parse(textBox47.Text);
-                    //suma += double.Parse(textBox48.Text);
-                    sumaEspe += double.Parse(textBox49.Text);       //espe
-                    //suma += double.Parse(textBox5.Text);
-                    //suma += double.Parse(textBox50.Text);
-                    //suma += double.Parse(textBox51.Text);
-                    //suma += double.Parse(textBox52.Text);
-                    //suma += double.Parse(textBox53.Text);
-                    //suma += double.Parse(textBox54.Text);
-                    sumaEspe += double.Parse(textBox55.Text);       //espe
-                    //suma += double.Parse(textBox56.Text);
-                    //suma += double.Parse(textBox57.Text);
-                    //suma += double.Parse(textBox6.Text);
-                    //suma += double.Parse(textBox7.Text);
-                    sumaMate += double.Parse(textBox8.Text);    //mate
-                    //suma += double.Parse(textBox9.Text);
+                    if (textBox101.Text == "-1.0") textBox101.Text = "0.0";
+                    if (textBox102.Text == "-1.0") textBox102.Text = "0.0";
+                    if (textBox103.Text == "-1.0") textBox103.Text = "0.0";
+                    if (textBox104.Text == "-1.0") textBox104.Text = "0.0";
+                    if (textBox105.Text == "-1.0") textBox105.Text = "0.0";
+                    if (textBox106.Text == "-1.0") textBox106.Text = "0.0";
+                    if (textBox107.Text == "-1.0") textBox107.Text = "0.0";
+                    if (textBox108.Text == "-1.0") textBox108.Text = "0.0";
+                    if (textBox109.Text == "-1.0") textBox109.Text = "0.0";
+                    if (textBox110.Text == "-1.0") textBox110.Text = "0.0";
+                    if (textBox111.Text == "-1.0") textBox111.Text = "0.0";
+                    if (textBox112.Text == "-1.0") textBox112.Text = "0.0";
+                    if (textBox113.Text == "-1.0") textBox113.Text = "0.0";
+                    if (textBox114.Text == "-1.0") textBox114.Text = "0.0";
+                    if (textBox115.Text == "-1.0") textBox115.Text = "0.0";
+                    if (textBox116.Text == "-1.0") textBox116.Text = "0.0";
+                    if (textBox117.Text == "-1.0") textBox117.Text = "0.0";
+                    if (textBox118.Text == "-1.0") textBox118.Text = "0.0";
+                    if (textBox119.Text == "-1.0") textBox119.Text = "0.0";
+                    if (textBox120.Text == "-1.0") textBox120.Text = "0.0";
+                    if (textBox121.Text == "-1.0") textBox121.Text = "0.0";
+                    if (textBox122.Text == "-1.0") textBox122.Text = "0.0";
+                    if (textBox123.Text == "-1.0") textBox123.Text = "0.0";
+                    if (textBox124.Text == "-1.0") textBox124.Text = "0.0";
+                    if (textBox125.Text == "-1.0") textBox125.Text = "0.0";
+                    if (textBox126.Text == "-1.0") textBox126.Text = "0.0";
+                    if (textBox127.Text == "-1.0") textBox127.Text = "0.0";
+                    if (textBox128.Text == "-1.0") textBox128.Text = "0.0";
+                    if (textBox129.Text == "-1.0") textBox129.Text = "0.0";
+                    if (textBox130.Text == "-1.0") textBox130.Text = "0.0";
+                    if (textBox131.Text == "-1.0") textBox131.Text = "0.0";
+                    if (textBox132.Text == "-1.0") textBox132.Text = "0.0";
+                    if (textBox133.Text == "-1.0") textBox133.Text = "0.0";
+                    if (textBox134.Text == "-1.0") textBox134.Text = "0.0";
+                    if (textBox135.Text == "-1.0") textBox135.Text = "0.0";
+                    if (textBox136.Text == "-1.0") textBox136.Text = "0.0";
+                    if (textBox137.Text == "-1.0") textBox137.Text = "0.0";
+                    if (textBox138.Text == "-1.0") textBox138.Text = "0.0";
+                    if (textBox139.Text == "-1.0") textBox139.Text = "0.0";
+                    if (textBox140.Text == "-1.0") textBox140.Text = "0.0";
+                    if (textBox141.Text == "-1.0") textBox141.Text = "0.0";
+                    if (textBox142.Text == "-1.0") textBox142.Text = "0.0";
+                    if (textBox143.Text == "-1.0") textBox143.Text = "0.0";
+                    if (textBox144.Text == "-1.0") textBox144.Text = "0.0";
+                    if (textBox145.Text == "-1.0") textBox145.Text = "0.0";
+                    if (textBox146.Text == "-1.0") textBox146.Text = "0.0";
+                    if (textBox147.Text == "-1.0") textBox147.Text = "0.0";
+
+                    sumaMate += double.Parse(textBox101.Text);
+                    sumaMate += double.Parse(textBox102.Text);
+                    sumaMate += double.Parse(textBox103.Text);
+                    sumaEspe += double.Parse(textBox104.Text);
+                    sumaMate += double.Parse(textBox105.Text);
+                    sumaInst += double.Parse(textBox106.Text);
+                    sumaMate += double.Parse(textBox107.Text);
+                    sumaMate += double.Parse(textBox108.Text);
+                    sumaMate += double.Parse(textBox109.Text);
+                    sumaEspe += double.Parse(textBox110.Text);
+                    sumaInst += double.Parse(textBox111.Text);
+                    sumaEspe += double.Parse(textBox112.Text);
+                    sumaMate += double.Parse(textBox113.Text);
+                    sumaEspe += double.Parse(textBox114.Text);
+                    sumaEspe += double.Parse(textBox115.Text);
+                    sumaMate += double.Parse(textBox116.Text);
+                    sumaEspe += double.Parse(textBox117.Text);
+                    sumaEspe += double.Parse(textBox118.Text);
+                    sumaEspe += double.Parse(textBox119.Text);
+                    sumaEspe += double.Parse(textBox120.Text);
+                    sumaEspe += double.Parse(textBox121.Text);
+                    sumaMate += double.Parse(textBox122.Text);
+                    sumaEspe += double.Parse(textBox123.Text);
+                    sumaEspe += double.Parse(textBox124.Text);
+                    sumaEspe += double.Parse(textBox125.Text);
+                    sumaEspe += double.Parse(textBox126.Text);
+                    sumaEspe += double.Parse(textBox127.Text);
+                    sumaEspe += double.Parse(textBox128.Text);
+                    sumaMate += double.Parse(textBox129.Text);
+                    sumaEspe += double.Parse(textBox130.Text);
+                    sumaEspe += double.Parse(textBox131.Text);
+                    sumaEspe += double.Parse(textBox132.Text);
+                    sumaEspe += double.Parse(textBox133.Text);
+                    sumaEspe += double.Parse(textBox134.Text);
+                    sumaEspe += double.Parse(textBox135.Text);
+                    sumaMate += double.Parse(textBox136.Text);
+                    sumaEspe += double.Parse(textBox137.Text);
+                    sumaEspe += double.Parse(textBox138.Text);
+                    sumaEspe += double.Parse(textBox139.Text);
+                    sumaEspe += double.Parse(textBox140.Text);
+                    sumaTerm += double.Parse(textBox141.Text);
+                    sumaTerm += double.Parse(textBox142.Text);
+                    sumaTerm += double.Parse(textBox143.Text);
+                    sumaInst += double.Parse(textBox144.Text);
+                    sumaTerm += double.Parse(textBox145.Text);
+                    sumaTerm += double.Parse(textBox146.Text);
+                    sumaTerm += double.Parse(textBox147.Text);
+
                     //suma = Convert.ToDouble(textBox1.Text + textBox10.Text);
-
                     if (sumaMate != 0.0)
                     {
                         button1.Visible = true;
-                        sumaMate /= 5.0;
+                        sumaMate /= 12.0;
                         sumaMate = (sumaMate * 100.0) / 10.0;
-                        textBox58.Text = sumaMate.ToString();
+                        textBox2.Text = sumaMate.ToString();
                     }
                     else if (sumaMate == 0.0)
                     {
                         button1.Visible = true;
                         sumaMate = 0.0;
-                        textBox58.Text = sumaMate.ToString();
+                        textBox2.Text = sumaMate.ToString();
                     }
                     if (sumaEspe != 0.0)
                     {
                         button2.Visible = true;
-                        sumaEspe /= 9.0;
+                        sumaEspe /= 26.0;
                         sumaEspe = (sumaEspe * 100.0) / 10.0;
-                        textBox59.Text = sumaEspe.ToString();
+                        textBox3.Text = sumaEspe.ToString();
                     }
-                    else if (sumaMate == 0.0)
+                    else if (sumaEspe == 0.0)
                     {
-                        button1.Visible = true;
+                        button2.Visible = true;
                         sumaEspe = 0.0;
-                        textBox58.Text = sumaEspe.ToString();
+                        textBox3.Text = sumaEspe.ToString();
                     }
                 }
             }
@@ -337,7 +250,7 @@ namespace BusinessIntelligence_v1
                 panel2.Controls.Add(formularios);
                 panel2.Tag = formularios;
 
-                formularios.textBox1.Text = textBox58.Text;
+                formularios.textBox1.Text = textBox2.Text;
 
                 formularios.Show();
                 formularios.BringToFront();
@@ -373,7 +286,7 @@ namespace BusinessIntelligence_v1
                 panel2.Controls.Add(formularios);
                 panel2.Tag = formularios;
 
-                formularios.textBox1.Text = textBox59.Text;
+                formularios.textBox1.Text = textBox3.Text;
 
                 formularios.Show();
                 formularios.BringToFront();

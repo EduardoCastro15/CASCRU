@@ -83,63 +83,53 @@ namespace BusinessIntelligence_v1
             opc = MessageBox.Show("Estas seguro que desear limpiar todos los campos?", "Limpiar todos los campos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (opc == DialogResult.OK)
             {
-                //textBox1.Text = "";
-                textBox10.Text = "";
-                textBox11.Text = "";
-                textBox12.Text = "";
-                textBox13.Text = "";
-                textBox14.Text = "";
-                textBox15.Text = "";
-                textBox16.Text = "";
-                textBox17.Text = "";
-                textBox18.Text = "";
-                textBox19.Text = "";
-                textBox2.Text = "";
-                textBox20.Text = "";
-                textBox21.Text = "";
-                textBox22.Text = "";
-                textBox23.Text = "";
-                textBox24.Text = "";
-                textBox25.Text = "";
-                textBox26.Text = "";
-                textBox27.Text = "";
-                textBox28.Text = "";
-                textBox29.Text = "";
-                textBox3.Text = "";
-                textBox30.Text = "";
-                textBox31.Text = "";
-                textBox32.Text = "";
-                textBox33.Text = "";
-                textBox34.Text = "";
-                textBox35.Text = "";
-                textBox36.Text = "";
-                textBox37.Text = "";
-                textBox38.Text = "";
-                textBox39.Text = "";
-                textBox4.Text = "";
-                textBox40.Text = "";
-                textBox41.Text = "";
-                textBox42.Text = "";
-                textBox43.Text = "";
-                textBox44.Text = "";
-                textBox45.Text = "";
-                textBox46.Text = "";
-                textBox47.Text = "";
-                textBox48.Text = "";
-                textBox49.Text = "";
-                textBox5.Text = "";
-                textBox50.Text = "";
-                textBox51.Text = "";
-                textBox52.Text = "";
-                textBox53.Text = "";
-                textBox54.Text = "";
-                textBox55.Text = "";
-                textBox56.Text = "";
-                textBox57.Text = "";
-                textBox6.Text = "";
-                textBox7.Text = "";
-                textBox8.Text = "";
-                textBox9.Text = "";
+                textBox101.Text = "";
+                textBox102.Text = "";
+                textBox103.Text = "";
+                textBox104.Text = "";
+                textBox105.Text = "";
+                textBox106.Text = "";
+                textBox107.Text = "";
+                textBox108.Text = "";
+                textBox109.Text = "";
+                textBox110.Text = "";
+                textBox111.Text = "";
+                textBox112.Text = "";
+                textBox113.Text = "";
+                textBox114.Text = "";
+                textBox115.Text = "";
+                textBox116.Text = "";
+                textBox117.Text = "";
+                textBox118.Text = "";
+                textBox119.Text = "";
+                textBox120.Text = "";
+                textBox121.Text = "";
+                textBox122.Text = "";
+                textBox123.Text = "";
+                textBox124.Text = "";
+                textBox125.Text = "";
+                textBox126.Text = "";
+                textBox127.Text = "";
+                textBox128.Text = "";
+                textBox129.Text = "";
+                textBox130.Text = "";
+                textBox131.Text = "";
+                textBox132.Text = "";
+                textBox133.Text = "";
+                textBox134.Text = "";
+                textBox135.Text = "";
+                textBox136.Text = "";
+                textBox137.Text = "";
+                textBox138.Text = "";
+                textBox139.Text = "";
+                textBox140.Text = "";
+                textBox141.Text = "";
+                textBox142.Text = "";
+                textBox143.Text = "";
+                textBox144.Text = "";
+                textBox145.Text = "";
+                textBox146.Text = "";
+                textBox147.Text = "";
             }
         }
 
@@ -147,7 +137,7 @@ namespace BusinessIntelligence_v1
         {
             try
             {
-                if (textBox10.Text == "")
+                /*if (textBox10.Text == "")
                     textBox10.Text = "-1.0";
                 if (textBox11.Text == "")
                     textBox11.Text = "-1.0";
@@ -258,37 +248,30 @@ namespace BusinessIntelligence_v1
                 if (textBox8.Text == "")
                     textBox8.Text = "-1.0";
                 if (textBox9.Text == "")
-                    textBox9.Text = "-1.0";
+                    textBox9.Text = "-1.0";*/
 
                 conn.Open();
                 cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = ("insert into datos_academicos_discente(matricula_discente,fisica_general,algebra_superior,geometria_analitica," +
-                    "matematicas_basicas_para_ingenieria,calculo_diferencial_e_integral,temas_selecto_de_fisica,algebra_lineal," +
-                    "mecanica_I,calculo_vectorial_I,programacion,dibujo_de_ingenieria,quimica_general,electricidad_y_magnetismo," +
-                    "probabilidad_y_estadistica,ecuaciones_diferenciales,calculo_vectorial_II,organizacion_de_computadoras," +
-                    "programacion_avanzada,simulacion_de_sistemas,matematicas_avanzadas,arquitectura_de_computadoras_II,estructura_de_datos," +
-                    "investigacion_de_operaciones_I,lenguaje_ensamblador,matematicas_computacionales,lenguajes_de_programacion," +
-                    "ingenieria_de_sistemas_de_informacion_I,investigacion_de_operaciones_II,sistemas_operativos,analisis_de_algoritmos," +
-                    "teoria_de_computacion,senales_y_sistemas,bases_de_datos,ingenieria_de_sistemas_de_informacion_II,diseno_de_compiladores," +
-                    "sistemas_distribuidos,microprocesadores_y_microcontroladores,bases_de_datos_avanzadas,tecnicas_de_produccion_de_sistemas," +
-                    "sistemas_expertos,arquitectura_de_desarrollo_de_software,programacion_orientada_a_objetos," +
-                    "sistemas_computacionales_en_ambiente_multimedia,ingenieria_de_redes_I,tecnologias_de_informacion_emergente," +
-                    "seguridad_computacional,inteligencia_artificial,desarrollo_de_software_orientado_a_objetos,auditoria_y_consultoria_informatica," +
-                    "ingenieria_de_redes_II,topicos_avanzados,legislacion_informatica,redes_neuronales,proyectos_de_ingenieria_de_software," +
-                    "laboratorio_de_ingenieria_de_redes,ingenieria_de_redes_III) " +
-                    "values('" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "', '" + textBox5.Text +
-                    "', '" + textBox6.Text + "', '" + textBox7.Text + "', '" + textBox8.Text + "', '" + textBox9.Text + "', '" + textBox10.Text +
-                    "', '" + textBox11.Text + "', '" + textBox12.Text + "', '" + textBox13.Text + "', '" + textBox14.Text + "', '" + textBox15.Text +
-                    "', '" + textBox16.Text + "', '" + textBox17.Text + "', '" + textBox18.Text + "', '" + textBox19.Text + "', '" + textBox20.Text +
-                    "', '" + textBox21.Text + "', '" + textBox22.Text + "', '" + textBox23.Text + "', '" + textBox24.Text + "', '" + textBox25.Text +
-                    "', '" + textBox26.Text + "', '" + textBox27.Text + "', '" + textBox28.Text + "', '" + textBox29.Text + "', '" + textBox30.Text +
-                    "', '" + textBox31.Text + "', '" + textBox32.Text + "', '" + textBox33.Text + "', '" + textBox34.Text + "', '" + textBox35.Text +
-                    "', '" + textBox36.Text + "', '" + textBox37.Text + "', '" + textBox38.Text + "', '" + textBox39.Text + "', '" + textBox40.Text +
-                    "', '" + textBox41.Text + "', '" + textBox42.Text + "', '" + textBox43.Text + "', '" + textBox44.Text + "', '" + textBox45.Text +
-                    "', '" + textBox46.Text + "', '" + textBox47.Text + "', '" + textBox48.Text + "', '" + textBox49.Text + "', '" + textBox50.Text +
-                    "', '" + textBox51.Text + "', '" + textBox52.Text + "', '" + textBox53.Text + "', '" + textBox54.Text + "', '" + textBox55.Text +
-                    "', '" + textBox56.Text + "', '" + textBox57.Text + "');");
+                cmd.CommandText = ("insert into datos_academicos_discente( analisis_vectorial, calculo, matematicas_discretas, algoritmia_y_programacion_estructurada, " +
+                    "fisica, ingenieria_etica_sociedad, ecuaciones_diferenciales, algebra_lineal, calculo_aplicado, estructuras_de_datos, comunicacion_oral_y_escrita, " +
+                    "analisis_fundamental_de_circuitos, matematicas_avanzadas_para_la_ingenieria, fundamentos_economicos, fundamentos_de_diseño_digital, " +
+                    "teoria_computacional, bases_de_datos, programacion_orientada_a_objetos, electronica_analogica, redes_de_computadoras, diseno_de_sistemas_computacionales, " +
+                    "probabilidad_y_estadistica, sistemas_operativos, analisis_y_diseno_orientado_objetos, tecnologias_para_la_web, administracion_financiera, optativa_A, " +
+                    "arquitectura_de_computadoras, analisis_de_algoritmos, optativa_B, ingenieria_de_software, administracion_de_proyectos, instrumentacion, " +
+                    "teoria_de_comunicaciones_y_senales, aplicaciones_para_comunicaciones_en_red, metodos_cuantitativos_para_la_toma_de_decisiones, " +
+                    "introduccion_a_los_microcontroladores, compiladores, optativa_C, optativa_D, desarrollo_de_sistemas_distribuidos, administracion_de_servicios_en_red, " +
+                    "gestion_empresarial, liderazgo, trabajo_terminal_I, electiva, trabajo_terminal_II) " +
+                    "values('" + textBox101.Text + "', '" + textBox102.Text + "', '" + textBox103.Text + "', '" + textBox104.Text + "', '" +
+                    textBox105.Text + "', '" + textBox106.Text + "', '" + textBox107.Text + "', '" + textBox108.Text + "', '" + textBox109.Text + "', '" +
+                    textBox110.Text + "', '" + textBox111.Text + "', '" + textBox112.Text + "', '" + textBox113.Text + "', '" + textBox114.Text + "', '" +
+                    textBox115.Text + "', '" + textBox116.Text + "', '" + textBox117.Text + "', '" + textBox118.Text + "', '" + textBox119.Text + "', '" +
+                    textBox120.Text + "', '" + textBox121.Text + "', '" + textBox122.Text + "', '" + textBox123.Text + "', '" + textBox124.Text + "', '" +
+                    textBox125.Text + "', '" + textBox126.Text + "', '" + textBox127.Text + "', '" + textBox128.Text + "', '" + textBox129.Text + "', '" +
+                    textBox130.Text + "', '" + textBox131.Text + "', '" + textBox132.Text + "', '" + textBox133.Text + "', '" + textBox134.Text + "', '" +
+                    textBox135.Text + "', '" + textBox136.Text + "', '" + textBox137.Text + "', '" + textBox138.Text + "', '" + textBox139.Text + "', '" +
+                    textBox140.Text + "', '" + textBox141.Text + "', '" + textBox142.Text + "', '" + textBox143.Text + "', '" + textBox144.Text + "', '" +
+                    textBox145.Text + "', '" + textBox146.Text + "', '" + textBox147.Text + "');");
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("Las calificaciones del usuario se agregaron con éxito");
@@ -321,6 +304,11 @@ namespace BusinessIntelligence_v1
         }
 
         private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
         }
