@@ -40,6 +40,7 @@ namespace BusinessIntelligence_v1
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@ namespace BusinessIntelligence_v1
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button2);
@@ -63,7 +65,7 @@ namespace BusinessIntelligence_v1
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(6, 213);
+            this.button4.Location = new System.Drawing.Point(6, 229);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(190, 23);
             this.button4.TabIndex = 15;
@@ -73,7 +75,7 @@ namespace BusinessIntelligence_v1
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(6, 184);
+            this.button3.Location = new System.Drawing.Point(6, 200);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(190, 23);
             this.button3.TabIndex = 14;
@@ -85,9 +87,9 @@ namespace BusinessIntelligence_v1
             // 
             this.button2.Location = new System.Drawing.Point(6, 155);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(190, 23);
+            this.button2.Size = new System.Drawing.Size(190, 39);
             this.button2.TabIndex = 13;
-            this.button2.Text = "DISCENTES POR PROMEDIO";
+            this.button2.Text = "DISCENTES POR PROMEDIO vs SEXO";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -156,6 +158,16 @@ namespace BusinessIntelligence_v1
             this.panel4.Size = new System.Drawing.Size(944, 538);
             this.panel4.TabIndex = 3;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(6, 258);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(190, 23);
+            this.button5.TabIndex = 16;
+            this.button5.Text = "REGRESIÓN LINEAL";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // FormBI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,5 +200,6 @@ namespace BusinessIntelligence_v1
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

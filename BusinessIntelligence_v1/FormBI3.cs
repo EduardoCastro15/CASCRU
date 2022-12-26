@@ -44,7 +44,7 @@ namespace BusinessIntelligence_v1
                 chart1.Titles.Clear();
                 chart1.Series.Clear();
                 chart1.ChartAreas.Clear();
-                chart1.Palette = ChartColorPalette.Excel;
+                chart1.Palette = ChartColorPalette.Berry;
 
                 ChartArea areagrafico = new ChartArea();
                 areagrafico.Area3DStyle.Enable3D = true;
@@ -56,10 +56,11 @@ namespace BusinessIntelligence_v1
                 chart1.Titles.Add(titulo);
 
                 Series serie = new Series("Origen");
-                serie.ChartType = SeriesChartType.Column;
+                serie.ChartType = SeriesChartType.Doughnut;
                 serie.XValueMember = "entidad_nacimiento";
                 serie.YValueMembers = "Total";
                 serie.IsValueShownAsLabel = true;
+                serie.LabelAngle = 90;
 
                 chart1.Series.Add(serie);
                 chart1.DataSource = sedenaDataSet.Totalporentidad;

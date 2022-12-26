@@ -19,8 +19,8 @@ namespace BusinessIntelligence_v1
         }
 
         private MySqlConnection conn;
-        private MySqlCommand cmd;
-        private string sql;
+        //private MySqlCommand cmd;
+        //private string sql;
 
         private void button2_Click(object sender, EventArgs e)
         {

@@ -64,7 +64,6 @@ C:\Users\georg\Source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\System.Buff
 C:\Users\georg\Source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\System.Memory.dll
 C:\Users\georg\Source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\georg\Source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\georg\Source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\Ubiety.Dns.Core.dll
 C:\Users\georg\Source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\ZstdNet.dll
 C:\Users\georg\Source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\Google.Protobuf.pdb
 C:\Users\georg\Source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\Google.Protobuf.xml
@@ -104,3 +103,6 @@ C:\Users\georg\Source\Repos\CASCRU\BusinessIntelligence_v1\obj\Debug\BusinessInt
 C:\Users\georg\Source\Repos\CASCRU\BusinessIntelligence_v1\obj\Debug\BusinessIntelligence_v1.csproj.CopyComplete
 C:\Users\georg\Source\Repos\CASCRU\BusinessIntelligence_v1\obj\Debug\BusinessIntelligence_v1.exe
 C:\Users\georg\Source\Repos\CASCRU\BusinessIntelligence_v1\obj\Debug\BusinessIntelligence_v1.pdb
+C:\Users\georg\source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\NumSharp.dll
+C:\Users\georg\source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\georg\source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\NumSharp.pdb

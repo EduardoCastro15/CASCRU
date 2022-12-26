@@ -78,5 +78,10 @@ namespace BusinessIntelligence_v1
         {
             AbrirFormularios<FormBI7>();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AbrirFormularios<FormBI8>();
+        }
     }
 }
