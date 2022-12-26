@@ -34,7 +34,7 @@ namespace BusinessIntelligence_v1
                 conn.Open();
                 cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = ("select promedio, Count(promedio) as Total from sedena.discentes group by promedio;");
+                cmd.CommandText = ("select sexo, avg(promedio) as Total from sedena.discentes group by sexo;");
 
                 adaptar = new MySqlDataAdapter();
                 adaptar.SelectCommand = cmd;
@@ -51,13 +51,13 @@ namespace BusinessIntelligence_v1
 
                 chart1.ChartAreas.Add(areagrafico);
 
-                Title titulo = new Title("Total de discentes por promedio general");
+                Title titulo = new Title("Promedio general vs Sexo");
                 titulo.Font = new Font("Tahoma", 18, FontStyle.Bold);
                 chart1.Titles.Add(titulo);
 
                 Series serie = new Series("Promedio");
-                serie.ChartType = SeriesChartType.Line;
-                serie.XValueMember = "promedio";
+                serie.ChartType = SeriesChartType.Column;
+                serie.XValueMember = "sexo";
                 serie.YValueMembers = "Total";
                 serie.IsValueShownAsLabel = true;
 

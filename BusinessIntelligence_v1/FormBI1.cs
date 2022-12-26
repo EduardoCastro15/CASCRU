@@ -56,7 +56,7 @@ namespace BusinessIntelligence_v1
                 chart1.Titles.Add(titulo);
 
                 Series serie = new Series("Sexo");
-                serie.ChartType = SeriesChartType.Pie;
+                serie.ChartType = SeriesChartType.Doughnut;
                 serie.XValueMember = "sexo";
                 serie.YValueMembers = "Total";
                 serie.IsValueShownAsLabel = true;

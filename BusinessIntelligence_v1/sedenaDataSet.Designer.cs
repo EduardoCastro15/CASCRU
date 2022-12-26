@@ -9752,7 +9752,7 @@ namespace BusinessIntelligence_v1 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class TotalporpromedioDataTable : global::System.Data.TypedTableBase<TotalporpromedioRow> {
             
-            private global::System.Data.DataColumn columnPromedio;
+            private global::System.Data.DataColumn columnSexo;
             
             private global::System.Data.DataColumn columnTotal;
             
@@ -9791,9 +9791,9 @@ namespace BusinessIntelligence_v1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PromedioColumn {
+            public global::System.Data.DataColumn SexoColumn {
                 get {
-                    return this.columnPromedio;
+                    return this.columnSexo;
                 }
             }
             
@@ -9842,10 +9842,10 @@ namespace BusinessIntelligence_v1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TotalporpromedioRow AddTotalporpromedioRow(double Promedio, short Total) {
+            public TotalporpromedioRow AddTotalporpromedioRow(string Sexo, double Total) {
                 TotalporpromedioRow rowTotalporpromedioRow = ((TotalporpromedioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Promedio,
+                        Sexo,
                         Total};
                 rowTotalporpromedioRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTotalporpromedioRow);
@@ -9869,16 +9869,16 @@ namespace BusinessIntelligence_v1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnPromedio = base.Columns["Promedio"];
+                this.columnSexo = base.Columns["Sexo"];
                 this.columnTotal = base.Columns["Total"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnPromedio = new global::System.Data.DataColumn("Promedio", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPromedio);
-                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(short), null, global::System.Data.MappingType.Element);
+                this.columnSexo = new global::System.Data.DataColumn("Sexo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSexo);
+                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal);
             }
             
@@ -13801,26 +13801,26 @@ namespace BusinessIntelligence_v1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double Promedio {
+            public string Sexo {
                 get {
                     try {
-                        return ((double)(this[this.tableTotalporpromedio.PromedioColumn]));
+                        return ((string)(this[this.tableTotalporpromedio.SexoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Promedio\' de la tabla \'Totalporpromedio\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Sexo\' de la tabla \'Totalporpromedio\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTotalporpromedio.PromedioColumn] = value;
+                    this[this.tableTotalporpromedio.SexoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public short Total {
+            public double Total {
                 get {
                     try {
-                        return ((short)(this[this.tableTotalporpromedio.TotalColumn]));
+                        return ((double)(this[this.tableTotalporpromedio.TotalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'Total\' de la tabla \'Totalporpromedio\' es DBNull.", e);
@@ -13833,14 +13833,14 @@ namespace BusinessIntelligence_v1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPromedioNull() {
-                return this.IsNull(this.tableTotalporpromedio.PromedioColumn);
+            public bool IsSexoNull() {
+                return this.IsNull(this.tableTotalporpromedio.SexoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPromedioNull() {
-                this[this.tableTotalporpromedio.PromedioColumn] = global::System.Convert.DBNull;
+            public void SetSexoNull() {
+                this[this.tableTotalporpromedio.SexoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

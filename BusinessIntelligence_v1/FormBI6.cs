@@ -38,7 +38,7 @@ namespace BusinessIntelligence_v1
                 conn.Open();
                 cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = ("select grado_militar, Count(grado_militar) as Total from sedena.discentes group by grado_militar;");
+                cmd.CommandText = ("select grado_escolar, Count(grado_escolar) as Total from sedena.discentes group by grado_escolar;");
 
                 adaptar = new MySqlDataAdapter();
                 adaptar.SelectCommand = cmd;
@@ -55,13 +55,13 @@ namespace BusinessIntelligence_v1
 
                 chart1.ChartAreas.Add(areagrafico);
 
-                Title titulo = new Title("Total de discentes por grado militar");
+                Title titulo = new Title("Total de discentes por grado escolar");
                 titulo.Font = new Font("Tahoma", 18, FontStyle.Bold);
                 chart1.Titles.Add(titulo);
 
                 Series serie = new Series("Grado");
                 serie.ChartType = SeriesChartType.Pyramid;
-                serie.XValueMember = "grado_militar";
+                serie.XValueMember = "grado_escolar";
                 serie.YValueMembers = "Total";
                 serie.IsValueShownAsLabel = true;
 
