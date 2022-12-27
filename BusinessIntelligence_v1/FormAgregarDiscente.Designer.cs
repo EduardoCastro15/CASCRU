@@ -53,7 +53,6 @@ namespace BusinessIntelligence_v1
             this.label46 = new System.Windows.Forms.Label();
             this.textBox27 = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -132,6 +131,10 @@ namespace BusinessIntelligence_v1
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox15 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -153,6 +156,10 @@ namespace BusinessIntelligence_v1
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.comboBox15);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.textBox31);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.textBox30);
@@ -175,7 +182,6 @@ namespace BusinessIntelligence_v1
             this.panel1.Controls.Add(this.label46);
             this.panel1.Controls.Add(this.textBox27);
             this.panel1.Controls.Add(this.label45);
-            this.panel1.Controls.Add(this.textBox26);
             this.panel1.Controls.Add(this.label44);
             this.panel1.Controls.Add(this.textBox21);
             this.panel1.Controls.Add(this.dateTimePicker2);
@@ -344,18 +350,11 @@ namespace BusinessIntelligence_v1
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox14.FormattingEnabled = true;
             this.comboBox14.Items.AddRange(new object[] {
-            "Ingeniero constructor",
-            "Ingeniero en comunicaciones y electrónica",
-            "Ingeniero en computación e informática",
-            "Ingeniero químico industrial",
-            "Ingeniero mecánico industrial",
-            "Ingeniero electricista industrial",
-            "Administración y evaluación de proyectos",
-            "Ingeniería de costos",
-            "Sistemas de calidad",
-            "Tecnologías de la información",
-            "Ingeniería en telemática",
-            "Ingeniería automotriz"});
+            "Ingenieria en sistemas computacionales",
+            "Ingenieria en inteligencia artificial",
+            "Licenciatura en ciencia de datos",
+            "Ingenieria en sistemas automotrices",
+            "Maestria en ciencias en sistemas computacionales moviles"});
             this.comboBox14.Location = new System.Drawing.Point(718, 314);
             this.comboBox14.Name = "comboBox14";
             this.comboBox14.Size = new System.Drawing.Size(230, 20);
@@ -527,15 +526,6 @@ namespace BusinessIntelligence_v1
             this.label45.Size = new System.Drawing.Size(45, 12);
             this.label45.TabIndex = 111;
             this.label45.Text = "HORARIO:";
-            // 
-            // textBox26
-            // 
-            this.textBox26.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox26.Location = new System.Drawing.Point(718, 187);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(230, 20);
-            this.textBox26.TabIndex = 110;
             // 
             // label44
             // 
@@ -724,8 +714,8 @@ namespace BusinessIntelligence_v1
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox11.FormattingEnabled = true;
             this.comboBox11.Items.AddRange(new object[] {
-            "INGENIERÍA Y CIENCIAS FÍSICO MATEMÁTICAS",
-            "CIENCIAS MÉDICO BIOLÓGICAS",
+            "INGENIERIA Y CIENCIAS FISICO MATEMATICAS",
+            "CIENCIAS MEDICO BIOLOGICAS",
             "CIENCIAS SOCIALES Y ADMINISTRATIVAS"});
             this.comboBox11.Location = new System.Drawing.Point(154, 343);
             this.comboBox11.Name = "comboBox11";
@@ -807,8 +797,10 @@ namespace BusinessIntelligence_v1
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Items.AddRange(new object[] {
-            "OFICIAL",
-            "CADETE"});
+            "PRIMARIA",
+            "SECUNADARIA",
+            "BACHILLERATO",
+            "LICENCIATURA"});
             this.comboBox8.Location = new System.Drawing.Point(85, 83);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(128, 20);
@@ -1302,7 +1294,7 @@ namespace BusinessIntelligence_v1
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox13.Location = new System.Drawing.Point(83, 239);
             this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(157, 20);
+            this.textBox13.Size = new System.Drawing.Size(351, 20);
             this.textBox13.TabIndex = 35;
             // 
             // label15
@@ -1350,7 +1342,7 @@ namespace BusinessIntelligence_v1
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox7.Location = new System.Drawing.Point(85, 135);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(143, 20);
+            this.textBox7.Size = new System.Drawing.Size(128, 20);
             this.textBox7.TabIndex = 27;
             // 
             // label9
@@ -1428,9 +1420,9 @@ namespace BusinessIntelligence_v1
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(5, 86);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 12);
+            this.label6.Size = new System.Drawing.Size(77, 12);
             this.label6.TabIndex = 20;
-            this.label6.Text = "GRADO MILITAR:";
+            this.label6.Text = "GRADO ESCOLAR:";
             // 
             // label5
             // 
@@ -1529,6 +1521,52 @@ namespace BusinessIntelligence_v1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Location = new System.Drawing.Point(4, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 135;
+            this.button5.Text = "Buscar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox6.Location = new System.Drawing.Point(291, 135);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(143, 20);
+            this.textBox6.TabIndex = 136;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(222, 141);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 12);
+            this.label7.TabIndex = 137;
+            this.label7.Text = "GENERACIÓN:";
+            // 
+            // comboBox15
+            // 
+            this.comboBox15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox15.FormattingEnabled = true;
+            this.comboBox15.Items.AddRange(new object[] {
+            "Matutino",
+            "Vespertino"});
+            this.comboBox15.Location = new System.Drawing.Point(718, 187);
+            this.comboBox15.Name = "comboBox15";
+            this.comboBox15.Size = new System.Drawing.Size(230, 20);
+            this.comboBox15.TabIndex = 138;
+            // 
             // FormAgregarDiscente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1626,7 +1664,6 @@ namespace BusinessIntelligence_v1
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox textBox27;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.TextBox textBox26;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
@@ -1657,5 +1694,9 @@ namespace BusinessIntelligence_v1
         private System.Windows.Forms.TextBox textBox30;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox comboBox15;
     }
 }

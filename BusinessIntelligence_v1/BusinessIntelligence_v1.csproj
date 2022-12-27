@@ -266,6 +266,9 @@
     <EmbeddedResource Include="FormBI7.resx">
       <DependentUpon>FormBI7.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBI8.resx">
+      <DependentUpon>FormBI8.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDatosAcademicos.resx">
       <DependentUpon>FormDatosAcademicos.cs</DependentUpon>
     </EmbeddedResource>

@@ -106,3 +106,4 @@ C:\Users\georg\Source\Repos\CASCRU\BusinessIntelligence_v1\obj\Debug\BusinessInt
 C:\Users\georg\source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\NumSharp.dll
 C:\Users\georg\source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\BouncyCastle.Crypto.xml
 C:\Users\georg\source\Repos\CASCRU\BusinessIntelligence_v1\bin\Debug\NumSharp.pdb
+C:\Users\georg\source\Repos\CASCRU\BusinessIntelligence_v1\obj\Debug\BusinessIntelligence_v1.FormBI8.resources
