@@ -48,10 +48,7 @@ namespace BusinessIntelligence_v1
                 conn.Open();
                 cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = ("select matricula_discente, nombre_discente, apellido_paterno_discente, apellido_materno_discente, " +
-                                        "grado_escolar, plantel, CURP, RFC, cartilla_militar, sexo, fecha_nacimiento, nacionalidad, entidad_nacimiento, " +
-                                        "nombre_tutor, nombre_padre, nombre_madre, escuela_procedencia, tipo_escuela_procedencia, entidad_federativa_escuela, " +
-                                        "promedio_secundaria, promedio_bachillerato, foto from discentes where matricula_discente = '" + textBox1.Text + "' ");
+                cmd.CommandText = ("select * from discentes where matricula_discente = '" + textBox1.Text + "' ");
                 MySqlDataReader leer = cmd.ExecuteReader();
                 if (leer.HasRows)
                 {

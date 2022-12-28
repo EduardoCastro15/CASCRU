@@ -32,8 +32,7 @@ namespace BusinessIntelligence_v1
                 conn.Open();
                 cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = ("select peso, estatura, tipo_sangre, padece_enfermedad, descripcion_enfermedad, problema_fisico, descripcion_problema, " +
-                                   "operacion_fisica, descripcion_operacion, tatuajes, pie_plano, lentes from discentes where matricula_discente = '" + textBox1.Text + "' ");
+                cmd.CommandText = ("select * from discentes where matricula_discente = '" + textBox1.Text + "' ");
                 MySqlDataReader leer = cmd.ExecuteReader();
                 if (leer.HasRows)
                 {

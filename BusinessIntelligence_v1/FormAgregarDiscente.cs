@@ -111,7 +111,7 @@ namespace BusinessIntelligence_v1
                     pictureBox2.Image.Save(msHorario, ImageFormat.Jpeg);
                     byte[] aByte = msFoto.ToArray();
                     byte[] bByte = msHorario.ToArray();
-
+                    /*
                     conn.Open();
                     sql = @"select crack_user('" + textBox1.Text + "')";
                     cmd = new MySqlCommand(sql, conn);
@@ -122,16 +122,17 @@ namespace BusinessIntelligence_v1
                         cmd.CommandText = ("UPDATE discentes SET nombre_discente = '" + textBox2.Text + "' WHERE matricula_discente = " + textBox1.Text + ";" +
                                            "UPDATE discentes SET apellido_paterno_discente = '" + textBox3.Text + "' WHERE matricula_discente = " + textBox1.Text + ";" +
                                            "UPDATE discentes SET apellido_materno_discente = '" + textBox3.Text + "' WHERE matricula_discente = " + textBox1.Text + ";");
+                                           UPDATE `sedena`.`discentes` SET `foto` = ?, `foto_horario` = ? WHERE (`id` = '100');
+
                             
                             
                             
-                            
-                            /*          "grado_escolar, plantel, CURP, RFC, cartilla_militar, sexo, fecha_nacimiento, nacionalidad, entidad_nacimiento, " +
+                            /*          "matricula_discente, nombre_discente, apellido_paterno_discente, apellido_materno_discente, grado_escolar, plantel, CURP, RFC, cartilla_militar, sexo, fecha_nacimiento, nacionalidad, entidad_nacimiento, " +
                                         "nombre_tutor, nombre_padre, nombre_madre, escuela_procedencia, tipo_escuela_procedencia, entidad_federativa_escuela, " +
                                         "promedio_secundaria, promedio_bachillerato, foto, practica_deporte, nombre_deporte, nombre_entrenador, categoria, fecha_inicio, lugar, " +
                                         "horario_deporte, asociacion, peso, estatura, tipo_sangre, padece_enfermedad, descripcion_enfermedad, problema_fisico, descripcion_problema, " +
                                         "operacion_fisica, descripcion_operacion, tatuajes, pie_plano, lentes, carrera, promedio, foto_horario) " +
-                                        "values( );");*/
+                                        "values( );");
                         cmd.Parameters.AddWithValue("imagen", aByte);
                         cmd.Parameters.AddWithValue("horario", bByte);
                         cmd.ExecuteNonQuery();
@@ -147,7 +148,20 @@ namespace BusinessIntelligence_v1
                         cmd.Parameters.AddWithValue("imagen", aByte);
                         cmd.Parameters.AddWithValue("horario", bByte);
                         cmd.ExecuteNonQuery();
-                    }
+                    }*/
+                    cmd.CommandText = ("insert into discentes (matricula_discente, nombre_discente, apellido_paterno_discente, apellido_materno_discente, grado_escolar, plantel, CURP, RFC, cartilla_militar, generacion, sexo, fecha_nacimiento, nacionalidad, entidad_nacimiento, " +
+                                        "nombre_tutor, nombre_padre, nombre_madre, escuela_procedencia, tipo_escuela_procedencia, entidad_federativa_escuela, " +
+                                        "promedio_secundaria, promedio_bachillerato, foto, practica_deporte, nombre_deporte, nombre_entrenador, categoria, fecha_inicio, lugar, " +
+                                        "horario_deporte, asociacion, peso, estatura, tipo_sangre, padece_enfermedad, descripcion_enfermedad, problema_fisico, descripcion_problema, " +
+                                        "operacion_fisica, descripcion_operacion, tatuajes, pie_plano, lentes, carrera, promedio, foto_horario) values ('" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text +
+                                        "', '" + comboBox8.Text + "', '" + textBox10.Text + "', '" + textBox9.Text + "', '" + textBox8.Text + "', '" + textBox7.Text + "', '" + textBox6.Text + "', '" + comboBox9.Text + "', '" + dateTimePicker1.Text + "', '" + textBox13.Text + "', '" + comboBox10.Text +
+                                        "', '" + textBox11.Text + "', '" + textBox17.Text + "', '" + textBox18.Text + "', '" + textBox19.Text + "', '" + comboBox11.Text + "', '" + comboBox12.Text +
+                                        "', '" + textBox23.Text + "', '" + textBox22.Text + "', @imagen, '" + comboBox13.Text + "', '" + textBox14.Text + "', '" + textBox15.Text + "', '" + textBox20.Text + "', '" + dateTimePicker2.Text + "', '" + textBox21.Text +
+                                        "', '" + comboBox15.Text + "', '" + textBox27.Text + "', '" + textBox24.Text + "', '" + textBox25.Text + "', '" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + textBox29.Text + "', '" + comboBox3.Text + "', '" + textBox5.Text +
+                                        "', '" + comboBox4.Text + "', '" + textBox12.Text + "', '" + comboBox5.Text + "', '" + comboBox6.Text + "', '" + comboBox7.Text + "', '" + comboBox14.Text + "', '" + textBox28.Text + "', @horario);");
+                    cmd.Parameters.AddWithValue("imagen", aByte);
+                    cmd.Parameters.AddWithValue("horario", bByte);
+                    cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("El usuario se agregó con éxito");
                 }

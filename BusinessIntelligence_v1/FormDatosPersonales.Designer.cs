@@ -547,9 +547,9 @@ namespace BusinessIntelligence_v1
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(11, 117);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 17);
+            this.label6.Size = new System.Drawing.Size(118, 17);
             this.label6.TabIndex = 105;
-            this.label6.Text = "GRADO MILITAR:";
+            this.label6.Text = "GRADO ESCOLAR:";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
