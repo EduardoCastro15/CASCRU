@@ -64,6 +64,25 @@ namespace BusinessIntelligence_v1
                 MessageBox.Show("Error: " + ex.Message, "Algo salió mal", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
             }
+
+            try
+            {
+                DataTable tabla1 = new DataTable();
+                conn.Open();
+                cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = ("select * from datos_academicos_discente;");
+                adaptar1 = new MySqlDataAdapter();
+                adaptar1.SelectCommand = cmd;
+                adaptar1.Fill(tabla1);
+                dataGridView3.DataSource = tabla1;
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Algo salió mal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
+            }
         }
     }
 }
