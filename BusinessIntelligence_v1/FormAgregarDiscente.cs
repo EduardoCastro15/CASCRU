@@ -66,13 +66,12 @@ namespace BusinessIntelligence_v1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox10.Text == "" ||
-                textBox9.Text == "" || textBox8.Text == "" || textBox7.Text == "" || textBox11.Text == "" ||
-                textBox13.Text == "" || textBox17.Text == "" || textBox18.Text == "" || textBox19.Text == "" ||
-                textBox23.Text == "" || textBox22.Text == "" || textBox24.Text == "" || textBox25.Text == "" || textBox28.Text == "" ||
-                comboBox1.SelectedIndex == -1 || comboBox10.SelectedIndex == -1 || comboBox11.SelectedIndex == -1 || comboBox12.SelectedIndex == -1 || comboBox14.SelectedIndex == -1 ||
-                comboBox2.SelectedIndex == -1 || comboBox3.SelectedIndex == -1 || comboBox4.SelectedIndex == -1 || comboBox5.SelectedIndex == -1 || comboBox13.SelectedIndex == -1 ||
-                comboBox6.SelectedIndex == -1 || comboBox7.SelectedIndex == -1 || comboBox8.SelectedIndex == -1 || comboBox9.SelectedIndex == -1)
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || comboBox8.Text == "" || textBox10.Text == "" || textBox9.Text == "" ||
+                textBox8.Text == "" || textBox7.Text == "" || textBox6.Text == "" || comboBox9.Text == "" || dateTimePicker1.Text == "" || comboBox10.Text == "" ||
+                textBox11.Text == "" || textBox13.Text == "" || textBox17.Text == "" || textBox18.Text == "" || textBox19.Text == "" || comboBox11.Text == "" || comboBox12.Text == "" ||
+                textBox23.Text == "" || textBox22.Text == "" || textBox24.Text == "" || textBox25.Text == "" || comboBox1.Text == "" || comboBox2.Text == "" ||
+                comboBox3.Text == "" || comboBox4.Text == "" || comboBox5.Text == "" || comboBox6.Text == "" || comboBox7.Text == "" ||
+                comboBox13.Text == "" || comboBox14.Text == "" || textBox28.Text == "")
             {
                 MessageBox.Show("Hay campos vacios sin llenar");
             }
@@ -101,35 +100,44 @@ namespace BusinessIntelligence_v1
                 try
                 {
                     conn.Open();
-                    cmd = new MySqlCommand();
-                    cmd.Connection = conn;
-
-                    MemoryStream msFoto = new MemoryStream();
-                    MemoryStream msHorario = new MemoryStream();
-                    pictureBox1.Image.Save(msFoto, ImageFormat.Jpeg);
-                    pictureBox2.Image.Save(msHorario, ImageFormat.Jpeg);
-                    byte[] aByte = msFoto.ToArray();
-                    byte[] bByte = msHorario.ToArray();
-                    
-                    conn.Open();
                     sql = @"select crack_user('" + textBox1.Text + "')";
                     cmd = new MySqlCommand(sql, conn);
                     int result = (int)cmd.ExecuteScalar();
-                    conn.Close();
                     if (result == 1)
                     {
+                        MemoryStream msFoto = new MemoryStream();
+                        MemoryStream msHorario = new MemoryStream();
+                        pictureBox1.Image.Save(msFoto, ImageFormat.Jpeg);
+                        pictureBox2.Image.Save(msHorario, ImageFormat.Jpeg);
+                        byte[] aByte = msFoto.ToArray();
+                        byte[] bByte = msHorario.ToArray();
+
+                        cmd = new MySqlCommand();
+                        cmd.Connection = conn;
                         cmd.CommandText = ("UPDATE discentes SET matricula_discente = '" + textBox1.Text + "', nombre_discente = '" + textBox2.Text + "', apellido_paterno_discente = '" + textBox3.Text + "', apellido_materno_discente = '" + textBox4.Text + "', grado_escolar = '" + comboBox8.Text + "'" +
-                                            ", plantel = '" + textBox10.Text + "', CURP = '" + textBox9.Text + "', RFC = '" + textBox8.Text + "', cartilla_militar = '" + textBox7.Text + "', generacion = '" + textBox6.Text + "', sexo = '" + textBox9.Text + "', fecha_nacimiento = '" + dateTimePicker1.Text + "'" +
+                                            ", plantel = '" + textBox10.Text + "', CURP = '" + textBox9.Text + "', RFC = '" + textBox8.Text + "', cartilla_militar = '" + textBox7.Text + "', generacion = '" + textBox6.Text + "', sexo = '" + comboBox9.Text + "', fecha_nacimiento = '" + dateTimePicker1.Text + "'" +
                                             ", nacionalidad = '" + textBox13.Text + "', entidad_nacimiento = '" + comboBox10.Text + "', nombre_tutor = '" + textBox11.Text + "', nombre_padre = '" + textBox17.Text + "', nombre_madre = '" + textBox18.Text + "', escuela_procedencia = '" + textBox19.Text + "'" +
-                                            ", tipo_escuela_procedencia = '" + comboBox11.Text + "', entidad_federativa_escuela = '" + comboBox12.Text + "', promedio_secundaria = '" + textBox23.Text + "', promedio_bachillerato = '" + textBox22.Text + "', foto = '@imagen'" +
-                                            ", practica_deporte = '" + textBox13.Text + "', nombre_deporte = '" + textBox14.Text + "', nombre_entrenador = '" + textBox15.Text + "', categoria = '" + textBox20.Text + "', fecha_inicio = '" + dateTimePicker2.Text + "', lugar = '" + textBox21.Text + "'" +
+                                            ", tipo_escuela_procedencia = '" + comboBox11.Text + "', entidad_federativa_escuela = '" + comboBox12.Text + "', promedio_secundaria = '" + textBox23.Text + "', promedio_bachillerato = '" + textBox22.Text + "', foto = @imagen" +
+                                            ", practica_deporte = '" + comboBox13.Text + "', nombre_deporte = '" + textBox14.Text + "', nombre_entrenador = '" + textBox15.Text + "', categoria = '" + textBox20.Text + "', fecha_inicio = '" + dateTimePicker2.Text + "', lugar = '" + textBox21.Text + "'" +
                                             ", horario_deporte = '" + comboBox15.Text + "', asociacion = '" + textBox27.Text + "', peso = '" + textBox24.Text + "', estatura = '" + textBox25.Text + "', tipo_sangre = '" + comboBox1.Text + "', padece_enfermedad = '" + comboBox2.Text + "'" +
                                             ", descripcion_enfermedad = '" + textBox29.Text + "', problema_fisico = '" + comboBox3.Text + "', descripcion_problema = '" + textBox5.Text + "', operacion_fisica = '" + comboBox4.Text + "', descripcion_operacion = '" + textBox12.Text + "'" +
-                                            ", tatuajes = '" + comboBox5.Text + "', pie_plano = '" + comboBox6.Text + "', lentes = '" + comboBox7.Text + "', carrera = '" + comboBox14.Text + "', promedio = '" + textBox28.Text + "', foto_horario = '@horario' WHERE (matricula_discente = '" + textBox1.Text + "');");
+                                            ", tatuajes = '" + comboBox5.Text + "', pie_plano = '" + comboBox6.Text + "', lentes = '" + comboBox7.Text + "', carrera = '" + comboBox14.Text + "', promedio = '" + textBox28.Text + "', foto_horario = @horario WHERE (matricula_discente = '" + textBox1.Text + "');");
                         MessageBox.Show("El usuario se actualizó con éxito");
+                        cmd.Parameters.AddWithValue("imagen", aByte);
+                        cmd.Parameters.AddWithValue("horario", bByte);
+                        cmd.ExecuteNonQuery();
                     }
                     else
                     {
+                        MemoryStream msFoto = new MemoryStream();
+                        MemoryStream msHorario = new MemoryStream();
+                        pictureBox1.Image.Save(msFoto, ImageFormat.Jpeg);
+                        pictureBox2.Image.Save(msHorario, ImageFormat.Jpeg);
+                        byte[] aByte = msFoto.ToArray();
+                        byte[] bByte = msHorario.ToArray();
+
+                        cmd = new MySqlCommand();
+                        cmd.Connection = conn;
                         cmd.CommandText = ("insert into discentes (matricula_discente, nombre_discente, apellido_paterno_discente, apellido_materno_discente, grado_escolar, plantel, CURP, RFC, cartilla_militar, generacion, sexo, fecha_nacimiento, nacionalidad, entidad_nacimiento, " +
                                         "nombre_tutor, nombre_padre, nombre_madre, escuela_procedencia, tipo_escuela_procedencia, entidad_federativa_escuela, promedio_secundaria, promedio_bachillerato, foto, practica_deporte, nombre_deporte, nombre_entrenador, categoria, fecha_inicio, lugar, " +
                                         "horario_deporte, asociacion, peso, estatura, tipo_sangre, padece_enfermedad, descripcion_enfermedad, problema_fisico, descripcion_problema, " +
@@ -140,15 +148,17 @@ namespace BusinessIntelligence_v1
                                         "', '" + comboBox15.Text + "', '" + textBox27.Text + "', '" + textBox24.Text + "', '" + textBox25.Text + "', '" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + textBox29.Text + "', '" + comboBox3.Text + "', '" + textBox5.Text +
                                         "', '" + comboBox4.Text + "', '" + textBox12.Text + "', '" + comboBox5.Text + "', '" + comboBox6.Text + "', '" + comboBox7.Text + "', '" + comboBox14.Text + "', '" + textBox28.Text + "', @horario);");
                         MessageBox.Show("El usuario se agregó con éxito");
+                        cmd.Parameters.AddWithValue("imagen", aByte);
+                        cmd.Parameters.AddWithValue("horario", bByte);
+                        cmd.ExecuteNonQuery();
                     }
-                    cmd.Parameters.AddWithValue("imagen", aByte);
-                    cmd.Parameters.AddWithValue("horario", bByte);
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message, "Algo salió mal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
                     conn.Close();
                 }
             }
@@ -243,14 +253,13 @@ namespace BusinessIntelligence_v1
                     sql = @"select crack_user('" + textBox1.Text + "')";
                     cmd = new MySqlCommand(sql, conn);
                     int result = (int)cmd.ExecuteScalar();
-                    conn.Close();
                     if (result == 1)
                     {
                         MessageBox.Show("Se encontró la matrícula: " + textBox1.Text);
                         matricula = textBox1.Text;
                         try
                         {
-                            conn.Open();
+                            //conn.Open();
                             cmd = new MySqlCommand();
                             cmd.Connection = conn;
                             cmd.CommandText = ("select * from discentes where matricula_discente = '" + textBox1.Text + "' ");
@@ -320,6 +329,9 @@ namespace BusinessIntelligence_v1
                         catch (Exception ex)
                         {
                             MessageBox.Show("Error: " + ex.Message, "Algo salió mal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
                             conn.Close();
                         }
 
@@ -333,9 +345,17 @@ namespace BusinessIntelligence_v1
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message, "Algo salió mal", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //conn.Close();
+                }
+                finally
+                {
+                    conn.Close();
                 }
             }
+        }
+
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

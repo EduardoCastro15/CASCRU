@@ -213,6 +213,54 @@ namespace BusinessIntelligence_v1
                         textBox3.Text = sumaEspe.ToString();
                     }
                 }
+
+                if (textBox101.Text == "-1.0") textBox101.Text = "N/P";
+                if (textBox102.Text == "-1.0") textBox102.Text = "N/P";
+                if (textBox103.Text == "-1.0") textBox103.Text = "N/P";
+                if (textBox104.Text == "-1.0") textBox104.Text = "N/P";
+                if (textBox105.Text == "-1.0") textBox105.Text = "N/P";
+                if (textBox106.Text == "-1.0") textBox106.Text = "N/P";
+                if (textBox107.Text == "-1.0") textBox107.Text = "N/P";
+                if (textBox108.Text == "-1.0") textBox108.Text = "N/P";
+                if (textBox109.Text == "-1.0") textBox109.Text = "N/P";
+                if (textBox110.Text == "-1.0") textBox110.Text = "N/P";
+                if (textBox111.Text == "-1.0") textBox111.Text = "N/P";
+                if (textBox112.Text == "-1.0") textBox112.Text = "N/P";
+                if (textBox113.Text == "-1.0") textBox113.Text = "N/P";
+                if (textBox114.Text == "-1.0") textBox114.Text = "N/P";
+                if (textBox115.Text == "-1.0") textBox115.Text = "N/P";
+                if (textBox116.Text == "-1.0") textBox116.Text = "N/P";
+                if (textBox117.Text == "-1.0") textBox117.Text = "N/P";
+                if (textBox118.Text == "-1.0") textBox118.Text = "N/P";
+                if (textBox119.Text == "-1.0") textBox119.Text = "N/P";
+                if (textBox120.Text == "-1.0") textBox120.Text = "N/P";
+                if (textBox121.Text == "-1.0") textBox121.Text = "N/P";
+                if (textBox122.Text == "-1.0") textBox122.Text = "N/P";
+                if (textBox123.Text == "-1.0") textBox123.Text = "N/P";
+                if (textBox124.Text == "-1.0") textBox124.Text = "N/P";
+                if (textBox125.Text == "-1.0") textBox125.Text = "N/P";
+                if (textBox126.Text == "-1.0") textBox126.Text = "N/P";
+                if (textBox127.Text == "-1.0") textBox127.Text = "N/P";
+                if (textBox128.Text == "-1.0") textBox128.Text = "N/P";
+                if (textBox129.Text == "-1.0") textBox129.Text = "N/P";
+                if (textBox130.Text == "-1.0") textBox130.Text = "N/P";
+                if (textBox131.Text == "-1.0") textBox131.Text = "N/P";
+                if (textBox132.Text == "-1.0") textBox132.Text = "N/P";
+                if (textBox133.Text == "-1.0") textBox133.Text = "N/P";
+                if (textBox134.Text == "-1.0") textBox134.Text = "N/P";
+                if (textBox135.Text == "-1.0") textBox135.Text = "N/P";
+                if (textBox136.Text == "-1.0") textBox136.Text = "N/P";
+                if (textBox137.Text == "-1.0") textBox137.Text = "N/P";
+                if (textBox138.Text == "-1.0") textBox138.Text = "N/P";
+                if (textBox139.Text == "-1.0") textBox139.Text = "N/P";
+                if (textBox140.Text == "-1.0") textBox140.Text = "N/P";
+                if (textBox141.Text == "-1.0") textBox141.Text = "N/P";
+                if (textBox142.Text == "-1.0") textBox142.Text = "N/P";
+                if (textBox143.Text == "-1.0") textBox143.Text = "N/P";
+                if (textBox144.Text == "-1.0") textBox144.Text = "N/P";
+                if (textBox145.Text == "-1.0") textBox145.Text = "N/P";
+                if (textBox146.Text == "-1.0") textBox146.Text = "N/P";
+                if (textBox147.Text == "-1.0") textBox147.Text = "N/P";
             }
             catch (Exception ex)
             {

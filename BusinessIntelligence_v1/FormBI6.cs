@@ -48,7 +48,7 @@ namespace BusinessIntelligence_v1
                 chart1.Titles.Clear();
                 chart1.Series.Clear();
                 chart1.ChartAreas.Clear();
-                chart1.Palette = ChartColorPalette.Excel;
+                chart1.Palette = ChartColorPalette.EarthTones;
 
                 ChartArea areagrafico = new ChartArea();
                 areagrafico.Area3DStyle.Enable3D = true;

@@ -21,66 +21,88 @@ namespace BusinessIntelligence_v1
         private MySqlConnection conn;
         private MySqlCommand cmd;
         private MySqlDataAdapter adaptar;
-        private MySqlDataAdapter adaptar1;
 
         private void FormTablaAdmins_Load(object sender, EventArgs e)
         {
             BusinessIntelligence_v1.ConexionBD conexion = new BusinessIntelligence_v1.ConexionBD();
             conn = conexion.ConectarMysql();
+
+            DataTable tabla1 = new DataTable();
+            DataTable tabla2 = new DataTable();
+            DataTable tabla3 = new DataTable();
+
+            conn.Open();
+            cmd = new MySqlCommand();
+            cmd.Connection = conn;
+            
+
             try
             {
-                DataTable tabla = new DataTable();
-                conn.Open();
-                cmd = new MySqlCommand();
-                cmd.Connection = conn;
                 cmd.CommandText = ("select * from usuarios;");
                 adaptar = new MySqlDataAdapter();
                 adaptar.SelectCommand = cmd;
-                adaptar.Fill(tabla);
-                dataGridView1.DataSource = tabla;
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Algo salió mal", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                conn.Close();
-            }
+                adaptar.Fill(tabla1);
+                dataGridView1.DataSource = tabla1;
 
-            try
-            {
-                DataTable tabla1 = new DataTable();
-                conn.Open();
-                cmd = new MySqlCommand();
-                cmd.Connection = conn;
                 cmd.CommandText = ("select * from discentes;");
-                adaptar1 = new MySqlDataAdapter();
-                adaptar1.SelectCommand = cmd;
-                adaptar1.Fill(tabla1);
-                dataGridView2.DataSource = tabla1;
-                conn.Close();
+                adaptar = new MySqlDataAdapter();
+                adaptar.SelectCommand = cmd;
+                adaptar.Fill(tabla2);
+                dataGridView2.DataSource = tabla2;
+
+                cmd.CommandText = ("select * from datos_academicos_discente;");
+                adaptar = new MySqlDataAdapter();
+                adaptar.SelectCommand = cmd;
+                adaptar.Fill(tabla3);
+                dataGridView3.DataSource = tabla3;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Algo salió mal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
                 conn.Close();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataTable tabla1 = new DataTable();
+            DataTable tabla2 = new DataTable();
+            DataTable tabla3 = new DataTable();
+
+            conn.Open();
+            cmd = new MySqlCommand();
+            cmd.Connection = conn;
+
 
             try
             {
-                DataTable tabla1 = new DataTable();
-                conn.Open();
-                cmd = new MySqlCommand();
-                cmd.Connection = conn;
+                cmd.CommandText = ("select * from usuarios;");
+                adaptar = new MySqlDataAdapter();
+                adaptar.SelectCommand = cmd;
+                adaptar.Fill(tabla1);
+                dataGridView1.DataSource = tabla1;
+
+                cmd.CommandText = ("select * from discentes;");
+                adaptar = new MySqlDataAdapter();
+                adaptar.SelectCommand = cmd;
+                adaptar.Fill(tabla2);
+                dataGridView2.DataSource = tabla2;
+
                 cmd.CommandText = ("select * from datos_academicos_discente;");
-                adaptar1 = new MySqlDataAdapter();
-                adaptar1.SelectCommand = cmd;
-                adaptar1.Fill(tabla1);
-                dataGridView3.DataSource = tabla1;
-                conn.Close();
+                adaptar = new MySqlDataAdapter();
+                adaptar.SelectCommand = cmd;
+                adaptar.Fill(tabla3);
+                dataGridView3.DataSource = tabla3;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Algo salió mal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
                 conn.Close();
             }
         }
