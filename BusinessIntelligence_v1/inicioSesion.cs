@@ -47,9 +47,7 @@ namespace BusinessIntelligence_v1
                     sql = @"select crack_login('"+textBox1.Text+"', '"+textBox2.Text+"')";
                     cmd = new MySqlCommand(sql, conn);
                     int result = (int)cmd.ExecuteScalar();
-                    conn.Close();
 
-                    conn.Open();
                     cmd1 = new MySqlCommand();
                     cmd1.Connection = conn;
                     cmd1.CommandText = ("select tipo_usuario, area from usuarios where matricula = '" + textBox1.Text + "' ");
@@ -71,18 +69,19 @@ namespace BusinessIntelligence_v1
                         {
                             MessageBox.Show("No se encontraron registros");
                         }
-                        conn.Close();
                     }
                     else
                     {
                         MessageBox.Show("El usuario o al contraeña son incorrectas", "Inicio de sesión fallida", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         return;
-
                     }
                 }
                 catch(Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message, "Algo salió mal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
                     conn.Close();
                 }
             }
